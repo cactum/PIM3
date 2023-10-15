@@ -1,0 +1,166 @@
+Create DATABASE PimBetaDB;
+
+-- Criação da tabela Funcoes
+CREATE TABLE Funcoes
+(
+  idFuncao INT PRIMARY KEY IDENTITY(1,1),
+  nomeFuncao VARCHAR(100) NOT NULL,
+  salarioBase DECIMAL(10,2) NOT NULL  -- Salário base associado à função
+);
+
+
+-- Criação da tabela Funcionarios
+CREATE TABLE Funcionarios
+(
+  idFuncionario INT PRIMARY KEY IDENTITY(1,1),
+  nome VARCHAR(100) NOT NULL,
+  nascData DATE NOT NULL,
+  genero CHAR(1),
+  CPF VARCHAR(15) NOT NULL,
+  endereco VARCHAR(200) NOT NULL,
+  email VARCHAR(100),
+  tel VARCHAR(14), 
+  idFuncao INT NOT NULL, -- Referência a função
+  FOREIGN KEY (idFuncao) REFERENCES Funcoes(idFuncao)
+);
+
+
+-- Criação da tabela DadosBanco
+CREATE TABLE DadosBanco
+(
+  idDadosBanco INT PRIMARY KEY IDENTITY(1,1),
+  idFuncionario INT NOT NULL, -- Referência ao funcionário
+  banco VARCHAR(50) NOT NULL,
+  agencia VARCHAR(50) NOT NULL,
+  conta VARCHAR(50) NOT NULL,
+  FOREIGN KEY (idFuncionario) REFERENCES Funcionarios(idFuncionario)
+);
+
+
+-- Criação da tabela Empresas
+CREATE TABLE Empresas
+(
+  idEmpresa INT PRIMARY KEY IDENTITY(1,1),
+  nomeEmpresa VARCHAR(100) NOT NULL,
+  CNPJ VARCHAR(20) NOT NULL,
+  endereco VARCHAR(100) NOT NULL,
+  telefone VARCHAR(15) NOT NULL
+);
+
+--Criação da tabela Folha de Pontos
+CREATE TABLE FolhaPontos
+(
+  idFolhaPontos INT PRIMARY KEY IDENTITY(1,1),
+  idFuncionario INT NOT NULL,  -- Referência ao funcionário
+  dataReferencia DATE NOT NULL,
+  mes INT NOT NULL,
+  ano INT NOT NULL,
+  horasTrabalhadas DECIMAL(10,2) NOT NULL,  -- Horas trabalhadas no período
+  FOREIGN KEY (idFuncionario) REFERENCES Funcionarios(idFuncionario)
+);
+
+--Criação da tabela Folha de Pagamentos
+CREATE TABLE Holerites
+(
+  idFolhaPag INT PRIMARY KEY IDENTITY(1,1),
+  idFuncionario INT NOT NULL,  -- Referência ao funcionário
+  idEmpresa INT NOT NULL, -- Referência à empresa
+  dataPagReferencia DATE NOT NULL,
+  dataPag DATE NOT NULL,
+  proventos DECIMAL(10,2) NOT NULL,  -- Proventos
+  salarioLiquido DECIMAL(10,2) NOT NULL,
+  descontos DECIMAL(10,2) NOT NULL,
+  NomeFuncionario VARCHAR(100) NOT NULL,
+  CPF VARCHAR(15) NOT NULL,
+  DataAdmissao DATE NOT NULL,
+  Cargo VARCHAR(100) NOT NULL,
+  CargaHoraria INT NOT NULL,
+  HorasExtras DECIMAL(10,2) NOT NULL,
+  HorasNoturnas DECIMAL(10,2) NOT NULL,
+  ImpostosRetidos DECIMAL(10,2) NOT NULL,
+  ContribuicaoPrevidenciaria DECIMAL(10,2) NOT NULL,
+  OutrosDescontosLegais DECIMAL(10,2) NOT NULL,
+  DescontosVoluntarios DECIMAL(10,2) NOT NULL,
+  SalarioBruto DECIMAL(10,2) NOT NULL,
+  GratificacoesEBonus DECIMAL(10,2) NOT NULL,
+  Beneficios DECIMAL(10,2) NOT NULL,
+  FeriasGozadas DECIMAL(10,2),  -- Apenas no mês de férias
+  Parcela13Salario DECIMAL(10,2),  -- Apenas no mês de 13º salário
+  ValorLiquido DECIMAL(10,2) NOT NULL,
+  NomeEmpresa VARCHAR(100) NOT NULL,
+  CNPJEmpresa VARCHAR(20) NOT NULL,
+  EnderecoEmpresa VARCHAR(100) NOT NULL,
+  FOREIGN KEY (idFuncionario) REFERENCES Funcionarios(idFuncionario),
+  FOREIGN KEY (idEmpresa) REFERENCES Empresas(idEmpresa)
+);
+
+--Criação da tabela de Usuarios (logon)
+CREATE TABLE Usuarios
+(
+  idUsuario INT PRIMARY KEY IDENTITY(1,1),
+  idFuncionario INT NOT NULL, -- Referência ao funcionário
+  login VARCHAR(50) NOT NULL,
+  senha VARCHAR(100) NOT NULL,
+  ativo BIT NOT NULL, -- Campo para controlar o status (ativo/inativo)
+  FOREIGN KEY (idFuncionario) REFERENCES Funcionarios(idFuncionario)
+);
+
+-- Criação da tabela Relatorios
+CREATE TABLE Relatorios
+(
+  idRelatorio INT PRIMARY KEY IDENTITY(1,1),
+  idFuncionario INT NOT NULL,  -- Referência ao funcionário
+  dataReferencia DATE NOT NULL,
+  salarioBruto DECIMAL(10,2) NOT NULL,
+  nomeFuncionario VARCHAR(100),
+  CPF VARCHAR(15),
+  dataAdmissao DATE,
+  cargo VARCHAR(100),
+  cargaHoraria INT,
+  horasExtras DECIMAL(10,2),
+  horasNoturnas DECIMAL(10,2),
+  impostosRetidos DECIMAL(10,2),
+  contribuicaoPrevidenciaria DECIMAL(10,2),
+  outrosDescontosLegais DECIMAL(10,2),
+  descontosVoluntarios DECIMAL(10,2),
+  gratificacoesEBonus DECIMAL(10,2),
+  beneficios DECIMAL(10,2),
+  feriasGozadas DECIMAL(10,2),
+  parcela13Salario DECIMAL(10,2),
+  valorLiquido DECIMAL(10,2),
+  tipoRelatorio VARCHAR(10), -- define relatorio mensal ou anual
+  FOREIGN KEY (idFuncionario) REFERENCES Funcionarios(idFuncionario)
+);
+
+-- Inserção na tabela Funcoes
+INSERT INTO Funcoes (nomeFuncao, salarioBase)
+VALUES ('Programador', 5000.00);
+
+-- Inserção na tabela Empresas
+INSERT INTO Empresas (nomeEmpresa, CNPJ, endereco, telefone)
+VALUES ('Empresa A', '12345678901234', 'Rua da Empresa, 123', '987654321');
+
+-- Inserção na tabela Funcionarios
+INSERT INTO Funcionarios (nome, nascData, genero, CPF, endereco, email, tel, idFuncao)
+VALUES ('João', '1990-05-15', 'M', '12345678901', 'Rua do Funcionário, 456', 'joao@example.com', '987654321', 1);
+
+-- Inserção na tabela DadosBanco
+INSERT INTO DadosBanco (idFuncionario, banco, agencia, conta)
+VALUES (1, 'Banco A', '1234', '56789012');
+
+-- Inserção na tabela FolhaPontos
+INSERT INTO FolhaPontos (idFuncionario, dataReferencia, mes, ano, horasTrabalhadas)
+VALUES (1, '2023-01-01', 1, 2023, 160.5);
+
+-- Inserção na tabela Holerites
+INSERT INTO Holerites (idFuncionario, idEmpresa, dataPagReferencia, dataPag, proventos, salarioLiquido, descontos, NomeFuncionario, CPF, DataAdmissao, Cargo, CargaHoraria, HorasExtras, HorasNoturnas, ImpostosRetidos, ContribuicaoPrevidenciaria, OutrosDescontosLegais, DescontosVoluntarios, SalarioBruto, GratificacoesEBonus, Beneficios, FeriasGozadas, Parcela13Salario, ValorLiquido, NomeEmpresa, CNPJEmpresa, EnderecoEmpresa)
+VALUES (1, 1, '2023-01-01', '2023-01-05', 6000.00, 5500.00, 500.00, 'João', '12345678901', '1990-05-15', 'Programador', 40, 10.5, 5.0, 450.00, 250.00, 100.00, 50.00, 5000.00, 1000.00, 300.00, NULL, 150.00, 5350.00, 'Empresa A', '12345678901234', 'Rua da Empresa, 123');
+
+-- Inserção na tabela Usuarios (logon)
+INSERT INTO Usuarios (idFuncionario, login, senha, ativo)
+VALUES (1, 'joao_user', 'senha123', 1);
+
+-- Inserção na tabela Relatorios
+INSERT INTO Relatorios (idFuncionario, dataReferencia, salarioBruto, nomeFuncionario, CPF, dataAdmissao, cargo, cargaHoraria, horasExtras, horasNoturnas, impostosRetidos, contribuicaoPrevidenciaria, outrosDescontosLegais, descontosVoluntarios, gratificacoesEBonus, beneficios, feriasGozadas, parcela13Salario, valorLiquido, tipoRelatorio)
+VALUES (1, '2023-01-01', 6000.00, 'João', '12345678901', '1990-05-15', 'Programador', 40, 10.5, 5.0, 450.00, 250.00, 100.00, 50.00, 1000.00, 300.00, NULL, 150.00, 5350.00, 'Mensal');
+
