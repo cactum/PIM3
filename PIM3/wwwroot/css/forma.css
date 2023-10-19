@@ -1,0 +1,154 @@
+/* Estilização para o corpo da página */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Estilização para o espaço inferior do corpo */
+body {
+    margin-bottom: 60px;
+}
+
+/* Adiciona espaçamento entre containers de cadastro */
+.main-container + .main-container {
+    margin-top: 20px;
+}
+
+/* Estilo para a página de cadastro */
+.date-input {
+    border: 1px solid #ced4da;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgb(86, 17, 82);
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.welcome-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(9, 1, 1, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.welcome-message {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    font-size: 14px;
+    font-size: 14px;
+    margin-bottom: 2em;
+}
+
+    .form-control::placeholder {
+        font-size: 14px;
+    }
+
+.form-group label {
+    display: none;
+}
+
+.menu-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: max-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.options-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.option-button {
+    background-color: #031a44b5;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+}
+
+.option-deslogar {
+    background-color: #700f0f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+}
+
+    .option-deslogar:hover {
+        background-color: #c01b1b;
+    }
+
+.option-button:hover {
+    background-color: #0056b3;
+}
+
+.menu-button {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        display: none;
+    }
+}
+
+/* Estilização para as alterações de tamanho de fonte */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem rgb(86, 17, 82), 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    margin-bottom: 60px;
+}

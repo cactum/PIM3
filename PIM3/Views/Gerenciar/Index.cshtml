@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Gerenciamento de Funcionários";
+}
+
+<section class="main-container">
+    <div class="welcome-container">
+        <h2 class="welcome-message">Gerenciamento de Funcionários</h2>
+
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar por Nome, CPF ou ID">
+                <button type="button" class="btn btn-primary" onclick="searchFuncionarios()">Pesquisar</button>
+                <a class="btn btn-primary" role="button" asp-controller="Gerenciar" asp-action="ListarTodos">Listar Todos</a>
+                <a class="btn btn-primary" role="button" asp-controller="Gerenciar" asp-action="Criar">Cadastrar novo funcionário</a>
+            </div>
+        </form>
+
+        <!-- Aqui será exibida a lista de funcionários ou os resultados da pesquisa -->
+        <div id="funcionariosList" class="funcionarios-list">
+            <!-- Os funcionários serão exibidos aqui -->
+        </div>
+    </div>
+</section>

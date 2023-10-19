@@ -1,0 +1,64 @@
+﻿@model CadastroViewModel
+@{
+    ViewData["Title"] = "Cadastrar Funcionários";
+}
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <section class="main-container">
+            <div class="welcome-container">
+                <h1 class="welcome-message">Cadastro de Funcionário</h1>
+
+                <form asp-controller="Gerenciar" asp-action="Criar" method="post">
+
+                    <div class="form-group">
+                        <label for="Nome">Nome</label>
+                        <input type="text" asp-for="Funcionario.Nome" class="form-control"  placeholder="Nome">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="date" asp-for="Funcionario.NascData" class="form-control date-input" required placeholder="Data de Nascimento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genero">Gênero</label>
+                        <select class="form-control" asp-for="Funcionario.Genero" required>
+                            <option value="" selected>Gênero</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="CPF">CPF</label>
+                        <input type="text" asp-for="Funcionario.CPF" class="form-control" required placeholder="CPF">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" asp-for="Funcionario.Endereco" class="form-control" required placeholder="Endereço">
+                    </div>
+
+                   <!-- <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" asp-for="Funcionario.Email" class="form-control" placeholder="Email">
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" asp-for="Funcionario.Telefone" class="form-control" placeholder="Telefone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DataAdmissao">Data de Contratação</label>
+                        <input type="date" asp-for="Funcionario.DataAdmissao" class="form-control date-input" placeholder="Data de Contratação" required>
+                    </div>                  
+
+
+                    <button type="submit" class="btn btn-primary">Cadastrar Funcionário</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
