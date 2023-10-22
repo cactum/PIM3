@@ -7,6 +7,7 @@ namespace PIM3.Repositorio
         FuncionarioModel AdicionarFuncionario(FuncionarioModel funcionario);
         FuncionarioModel ListarPorId(int id);
         FuncionarioModel PesquisarCpf(string  cpf);
+        public List<FuncionarioModel> PesquisarPorCpfPrefix(string cpfPrefix);
         List<FuncaoModel> BuscarTodos();
         List<FuncionarioModel> Buscar();
         FuncionarioModel Atualizar(FuncionarioModel funcionario);

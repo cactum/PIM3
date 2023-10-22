@@ -23,8 +23,23 @@ namespace PIM3.Repositorio
         }
         public FuncionarioModel PesquisarCpf(string cpf)
         {
-            return _bancoContext.Funcionario.FirstOrDefault(x => x.CPF == cpf);
+            if (!string.IsNullOrEmpty(cpf) && cpf.Length >= 3)
+            {
+                // Pesquisa por qualquer parte do CPF
+                return _bancoContext.Funcionario.FirstOrDefault(x => x.CPF.Contains(cpf));
+            }
+            else
+            {
+                // CPF com tamanho incorreto
+                return null;
+            }
         }
+
+        public List<FuncionarioModel> PesquisarPorCpfPrefix(string cpfPrefix)
+        {
+            return _bancoContext.Funcionario.Where(x => x.CPF.StartsWith(cpfPrefix)).ToList();
+        }
+
         public List<FuncaoModel> BuscarTodos()
         {
             return _bancoContext.Funcao.ToList();

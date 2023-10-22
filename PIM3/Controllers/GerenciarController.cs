@@ -30,13 +30,32 @@ namespace PIM3.Controllers
                 return RedirectToAction("Index");
             }
         }
-
         public IActionResult Pesquisar([FromQuery(Name = "CPF")] string cpf)
         {
             try
             {
-                FuncionarioModel funcionario = _gerenciarRepositorio.PesquisarCpf(cpf);
-                return View(funcionario);
+                List<FuncionarioModel> funcionarios = new List<FuncionarioModel>();
+
+                // Verifique se o CPF não está vazio
+                if (!string.IsNullOrEmpty(cpf))
+                {
+                    // 1. Pesquise por parte do CPF (quatro primeiros dígitos)
+                    string cpfPrefix = cpf.Substring(0, 3);
+                    var funcionariosCpfPrefix = _gerenciarRepositorio.PesquisarPorCpfPrefix(cpfPrefix);
+                    funcionarios.AddRange(funcionariosCpfPrefix);
+
+                    // 2. Se não encontrar resultados nos quatro primeiros dígitos, pesquise por CPF completo
+                    if (funcionariosCpfPrefix.Count == 0)
+                    {
+                        var funcionarioCpfCompleto = _gerenciarRepositorio.PesquisarCpf(cpf);
+                        if (funcionarioCpfCompleto != null)
+                        {
+                            funcionarios.Add(funcionarioCpfCompleto);
+                        }
+                    }
+                }
+
+                return View(funcionarios);
             }
             catch (Exception e)
             {
@@ -45,7 +64,6 @@ namespace PIM3.Controllers
                 return RedirectToAction("Index");
             }
         }
-
         public IActionResult Editar(int id)
         {
             try
@@ -60,8 +78,7 @@ namespace PIM3.Controllers
                  $"detalhe do erro: {e.Message}";
                 return RedirectToAction("ListarTodos");
             }
-        }
-        
+        }        
         [HttpGet]
         public IActionResult Criar()
         {
@@ -73,8 +90,7 @@ namespace PIM3.Controllers
 
             };
             return View(viewModel);
-        }
-       
+        }       
         [HttpPost]
         public IActionResult Criar(FuncionarioModel funcionario)
         {
