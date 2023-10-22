@@ -53,10 +53,12 @@
                     <div class="form-group">
                         <label for="DataAdmissao">Data de Contratação</label>
                         <input type="date" asp-for="Funcionario.DataAdmissao" class="form-control date-input" placeholder="Data de Contratação" required>
-                    </div>                  
+                    </div>            
 
+                    <button type="submit" class="btn btn-primary">Cadastrar Funcionário</button>                    
+                    <a class="btn btn-primary" asp-controller="Gerenciar" asp-action="Index">Voltar</a>
 
-                    <button type="submit" class="btn btn-primary">Cadastrar Funcionário</button>
+                   
                 </form>
             </div>
         </section>

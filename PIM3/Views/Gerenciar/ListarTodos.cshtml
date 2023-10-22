@@ -23,15 +23,15 @@
                 @TempData["MensagemErro"]
             </div>
         }
-
-        <table class="table">
+       <div class="content">
+        <table class="table" id="tabela-funcionarios">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Telefone</th>
                     <th scope="col">CPF</th>
                     <th scope="col">Data de Nascimento</th>
-                    <th scope="col">Telefone</th>
                     <th scope="col">Genero</th>
                     <th scope="col">Endereço</th>
                     <th scope="col"></th>
@@ -45,9 +45,9 @@
                         <tr>
                             <th scope="row">@funcionario.Id</th>
                             <td>@funcionario.Nome</td>
+                            <td>@funcionario.Telefone</td>
                             <td>@funcionario.CPF</td>
                             <td>@funcionario.NascData</td>
-                            <td>@funcionario.Telefone</td>
                             <td>@funcionario.Genero</td>
                             <td>@funcionario.Endereco</td>
                             <td>
@@ -63,6 +63,7 @@
         </table>
         <div class="text-center">
             <a class="btn btn-primary" asp-controller="Gerenciar" asp-action="Index">Voltar</a>
+            </div>
         </div>
     </div>
 </section>

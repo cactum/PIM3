@@ -47,7 +47,9 @@ body {
     width: 100%;
     text-align: center;
     margin: 0 auto;
-}
+    margin-right:auto
+   
+}  
 
 .welcome-message {
     font-size: 24px;
@@ -55,13 +57,13 @@ body {
 }
 
 .form-control {
-    font-size: 14px;
-    font-size: 14px;
+    font-size: 12px;
+    font-size: 12px;
     margin-bottom: 2em;
 }
 
     .form-control::placeholder {
-        font-size: 14px;
+        font-size: 12px;
     }
 
 .form-group label {
@@ -132,12 +134,12 @@ body {
 
 /* Estilização para as alterações de tamanho de fonte */
 html {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 @media (min-width: 768px) {
     html {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
