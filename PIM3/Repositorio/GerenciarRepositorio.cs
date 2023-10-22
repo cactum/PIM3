@@ -34,12 +34,10 @@ namespace PIM3.Repositorio
                 return null;
             }
         }
-
         public List<FuncionarioModel> PesquisarPorCpfPrefix(string cpfPrefix)
         {
             return _bancoContext.Funcionario.Where(x => x.CPF.StartsWith(cpfPrefix)).ToList();
         }
-
         public List<FuncaoModel> BuscarTodos()
         {
             return _bancoContext.Funcao.ToList();
