@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ander\Desktop\PIM3\PIM3
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ander/Desktop/PIM3/PIM3/Views/Gerenciar/ApagarConfirmacao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXEFwYWdhckNvbmZpcm1hY2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ander/Desktop/PIM3/PIM3/Views/Gerenciar/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXENyaWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ander/Desktop/PIM3/PIM3/Views/Gerenciar/ListarTodos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXExpc3RhclRvZG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PIM3/PIM3/Views/Gerenciar/Pesquisar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXFBlc3F1aXNhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ander/Desktop/PIM3/PIM3/Views/Home/Index.cshtml]

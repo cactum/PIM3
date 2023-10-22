@@ -17,14 +17,51 @@ namespace PIM3.Controllers
         }
         public IActionResult ListarTodos()
         {
-            List<FuncionarioModel> funcionarios = _gerenciarRepositorio.Buscar();
-            return View(funcionarios);
+            try
+            {
+                List<FuncionarioModel> funcionarios = _gerenciarRepositorio.Buscar();
+                return View(funcionarios);
+            }
+            catch (Exception e)
+            {
+
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel localizar cadastros, tente novamente! \n" +
+                    $"detalhe do erro: {e.Message}";
+                return RedirectToAction("Index");
+            }
         }
+
+        public IActionResult Pesquisar([FromQuery(Name = "CPF")] string cpf)
+        {
+            try
+            {
+                FuncionarioModel funcionario = _gerenciarRepositorio.PesquisarCpf(cpf);
+                return View(funcionario);
+            }
+            catch (Exception e)
+            {
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possível localizar cadastros, tente novamente! \n" +
+                    $"Detalhe do erro: {e.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+
         public IActionResult Editar(int id)
         {
-            FuncionarioModel funcionario = _gerenciarRepositorio.ListarPorId(id);
-            return View(funcionario);
+            try
+            {
+                FuncionarioModel funcionario = _gerenciarRepositorio.ListarPorId(id);
+                return View(funcionario);
+            }
+            catch (Exception e)
+            {
+
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel localizar, tente novamente! \n" +
+                 $"detalhe do erro: {e.Message}";
+                return RedirectToAction("ListarTodos");
+            }
         }
+        
         [HttpGet]
         public IActionResult Criar()
         {
@@ -41,14 +78,67 @@ namespace PIM3.Controllers
         [HttpPost]
         public IActionResult Criar(FuncionarioModel funcionario)
         {
-            _gerenciarRepositorio.AdicionnarFuncionario(funcionario);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _gerenciarRepositorio.AdicionarFuncionario(funcionario);
+                    TempData["MensagemSucesso"] = "Cadastrado realizado com sucesso";
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel cadastrar, tente novamente! \n" +
+                $"detalhe do erro: {e.Message}";
+                return RedirectToAction("Index");
+            }
         }
         [HttpPost]
         public IActionResult Alterar(FuncionarioModel funcionario)
         {
-            _gerenciarRepositorio.Atualizar(funcionario);
-            return RedirectToAction("Index");
+            try
+            {
+                _gerenciarRepositorio.Atualizar(funcionario);
+                TempData["MensagemSucesso"] = "Cadastro atualizado com sucesso";
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel alterar, tente novamente! \n" +
+                $"detalhe do erro: {e.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+        public IActionResult Apagar(int id)
+        {
+            try
+            {
+                bool apagado = _gerenciarRepositorio.Apagar(id);
+                if (apagado)
+                {
+                    TempData["MensagemSucesso"] = "Cadastro apagado com sucesso";
+                }
+                else
+                {
+                    TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel apagar, tente novamente!";
+                }
+
+                return RedirectToAction("ListarTodos");
+            }
+            catch (Exception erro)
+            {
+
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel apagar, tente novamente! \n" +
+                   $"detalhe do erro: {erro.Message}";
+                return RedirectToAction("ListarTodos");
+            }
+        }
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            FuncionarioModel funcionario = _gerenciarRepositorio.ListarPorId(id);
+            return View(funcionario);
         }
     }
 }

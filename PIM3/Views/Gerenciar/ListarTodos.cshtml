@@ -6,6 +6,24 @@
 <section class="main-container">
     <div class="welcome-container">
         <h2 class="welcome-message">Lista de Funcionários</h2>
+
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["MensagemSucesso"]
+
+            </div>
+        }
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                Alerta de erro!
+                @TempData["MensagemErro"]
+            </div>
+        }
+
         <table class="table">
             <thead>
                 <tr>
@@ -35,7 +53,7 @@
                             <td>
                                 <div class="btn-group" role="group">
                                     <a role="button" class="btn btn-primary" asp-route-id="@funcionario.Id" asp-controller="Gerenciar" asp-action="Editar">Editar</a>
-                                    <a role="button" class="btn btn-danger" asp-route-id="@funcionario.Id asp-controller="Contato" asp-action="ApagarConfirmacao">Apagar</a>
+                                    <a role="button" class="btn btn-danger" asp-route-id="@funcionario.Id" asp-controller="Gerenciar" asp-action="ApagarConfirmacao">Apagar</a>
                                 </div>
                             </td>
                         </tr>
