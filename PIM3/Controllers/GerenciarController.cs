@@ -39,12 +39,12 @@ namespace PIM3.Controllers
                 // Verifique se o CPF não está vazio
                 if (!string.IsNullOrEmpty(cpf))
                 {
-                    // 1. Pesquise por parte do CPF (quatro primeiros dígitos)
+                    // 1. Pesquise por parte do CPF (três primeiros dígitos)
                     string cpfPrefix = cpf.Substring(0, 3);
                     var funcionariosCpfPrefix = _gerenciarRepositorio.PesquisarPorCpfPrefix(cpfPrefix);
                     funcionarios.AddRange(funcionariosCpfPrefix);
 
-                    // 2. Se não encontrar resultados nos quatro primeiros dígitos, pesquise por CPF completo
+                    // 2. Se não encontrar resultados nos três primeiros dígitos, pesquise por CPF completo
                     if (funcionariosCpfPrefix.Count == 0)
                     {
                         var funcionarioCpfCompleto = _gerenciarRepositorio.PesquisarCpf(cpf);

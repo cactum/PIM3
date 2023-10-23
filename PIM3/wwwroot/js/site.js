@@ -4,7 +4,11 @@
 // Write your JavaScript code.
 
 $(document).ready(function () {
-    $('#tabela-funcionarios').DataTable({
+    getDataTable('#tabela-funcionarios')
+});
+
+function getDataTable(id){
+    $(id).DataTable({
         "ordering": true,
         "paging": true,
         "searching": true,
@@ -31,8 +35,8 @@ $(document).ready(function () {
                 "sSortDescending": ": Ordenar colunas de forma descendente"
             }
         }
-    });
-});
+    })
+}
 
 $('.close-alert').click(function () {
     $('.alert').hide('hide');

@@ -10,6 +10,7 @@ namespace PIM3.Data
         }
         
         public DbSet<FuncionarioModel> Funcionario { get; set; }
-        public DbSet<FuncaoModel> Funcao { get; set; } 
+        public DbSet<FuncaoModel> Funcao { get; set; }
+        public DbSet<UsuarioModel> Usuarios { get; set; }
     }
 }
