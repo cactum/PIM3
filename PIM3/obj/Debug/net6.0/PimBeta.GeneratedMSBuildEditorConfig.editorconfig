@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PimBeta
+build_property.RootNamespace = PimBeta
+build_property.ProjectDir = C:\Users\ander\Desktop\PimBeta\PIM3\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ander\Desktop\PimBeta\PIM3
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Gerenciar/ApagarConfirmacao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXEFwYWdhckNvbmZpcm1hY2FvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Gerenciar/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXENyaWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Gerenciar/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Gerenciar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Gerenciar/ListarTodos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXExpc3RhclRvZG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Gerenciar/Pesquisar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW5jaWFyXFBlc3F1aXNhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Holerite/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9sZXJpdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Usuario/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ander/Desktop/PimBeta/PIM3/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8vqodzww99

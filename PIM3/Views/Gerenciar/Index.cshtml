@@ -1,0 +1,42 @@
+﻿@model FuncionarioModel
+@{
+    ViewData["Title"] = "Gerenciamento de Funcionários";
+}
+
+<section class="main-container">
+    <div class="welcome-container">
+        <h2 class="welcome-message">Gerenciamento de Funcionários</h2>
+
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["MensagemSucesso"]
+
+            </div>
+        }
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                Alerta de erro!
+                @TempData["MensagemErro"]
+            </div>
+        }
+
+        <form asp-controller="Gerenciar" asp-action="Pesquisar" method="get">
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchInput" name="cpf" placeholder="Pesquisar CPF">
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+                <a class="btn btn-primary" role="button" asp-controller="Gerenciar" asp-action="ListarTodos">Listar Todos</a>
+                <a class="btn btn-primary" role="button" asp-controller="Gerenciar" asp-action="Criar">Cadastrar novo funcionário</a>
+                <a class="btn btn-primary" role="button" asp-controller="Usuario" asp-action="Index">Gerenciar usuários</a>
+            </div>
+        </form>
+
+        <!-- Aqui será exibida a lista de funcionários ou os resultados da pesquisa -->
+        <div id="funcionariosList" class="funcionarios-list">
+            <!-- Os funcionários serão exibidos aqui -->
+        </div>
+    </div>
+</section>

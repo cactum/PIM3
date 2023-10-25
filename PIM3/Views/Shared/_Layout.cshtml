@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PimMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/forma.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PimMVC.styles.css" asp-append-version="true" />
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Conteúdo do corpo da página -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Menu lateral -->
+    <div class="menu-container" id="menuContainer">
+        <!-- Opções do menu -->
+        <div class="options-menu">
+            <a class="option-button" role="button" asp-controller="Home" asp-action="Index">Inicio</a>
+            <br />
+            <a href="../HTML/meusdados.html" class="option-button">Meu Perfil</a>
+            <br />
+            <a class="option-button" role="button" asp-controller="Holerite" asp-action="Index">Consultar Holerite</a>
+            <br />
+            <a href="../HTML/consultarfolha.html" class="option-button">Consultar Folha de Ponto</a>
+            <br />
+            <a href="../HTML/relatorios.html" class="option-button">Consultar Relatórios</a>
+            <br />
+            <a href="../HTML/alterar.html" class="option-button">Solicitar Alteração de Dados Cadastrados</a>
+            <br />
+            <a class="option-button" role="button" asp-controller="Gerenciar" asp-action="Index">Gerenciar</a>
+            <br />
+            <a class="option-deslogar" role="button" asp-controller="Deslogar" asp-action="Deslogar">Deslogar</a>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript e outras inclusões -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
