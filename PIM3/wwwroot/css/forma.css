@@ -167,3 +167,21 @@ body {
     width: 30px;
     height: 31px;
 }
+
+.form-entrar {
+    width: 250px; /* Largura reduzida das caixas de formulário */
+    font-size:15px;
+    background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo mais transparente */
+    border: 1px solid #ccc; /* Adicionando uma borda leve */
+    border-radius: 8px; /* Borda arredondada */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 400px; /* Defina o valor desejado para a largura máxima */
+    width: 100%;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
