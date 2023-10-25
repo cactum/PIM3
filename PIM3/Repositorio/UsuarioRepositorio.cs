@@ -11,6 +11,10 @@ namespace PIM3.Repositorio
         {
             _bancoContext = bancoContext;
         }
+        public UsuarioModel BuscarLogin(string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
         public UsuarioModel ListarPorId(int id)
         {
             return _bancoContext.Usuarios.FirstOrDefault(x => x.Id == id);

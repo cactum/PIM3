@@ -8,6 +8,15 @@
     <div class="welcome-container">
         <h3 class="welcome-message">Entrar</h3>
 
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                Alerta de erro!
+                @TempData["MensagemErro"]
+            </div>
+        }
+
         <form asp-controller="login" asp-action="Entrar" method="post">
             <div class="mb-3">
                 <label for="login" class="form-label">Login</label>
