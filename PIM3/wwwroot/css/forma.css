@@ -1,6 +1,6 @@
 /* Estilização para o corpo da página */
 html {
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     min-height: 100%;
 }
@@ -57,13 +57,13 @@ body {
 }
 
 .form-control {
-    font-size: 12px;
-    font-size: 12px;
+    font-size: 13px;
+    font-size: 13px;
     margin-bottom: 2em;
 }
 
     .form-control::placeholder {
-        font-size: 12px;
+        font-size: 13px;
     }
 
 .form-group label {
@@ -134,12 +134,12 @@ body {
 
 /* Estilização para as alterações de tamanho de fonte */
 html {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 @media (min-width: 768px) {
     html {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
