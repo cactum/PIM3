@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -9,7 +10,7 @@
                 <!-- Conteúdo de boas-vindas -->
                 <div class="welcome-container">
                     <!-- Mensagem de boas-vindas -->
-                    <div class="welcome-message">Bem-vindo, Funcionário!</div>
+                @await Component.InvokeAsync("Menu")
                     <!-- Contêiner de informações da empresa -->
                     <div class="company-info">
                         <p>Empresa de Recursos Humanos</p>
