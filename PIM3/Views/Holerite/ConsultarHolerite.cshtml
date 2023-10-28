@@ -1,0 +1,47 @@
+﻿@model HoleriteModel
+
+
+<section class="main-container">
+    <div class="welcome-container">
+        
+            <h1>Holerite de @Model.NomeFuncionario</h1>
+
+            <table>
+                <tr>
+                <input type="hidden" asp-for="Id" />
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Função</th>
+                    <th>Empresa</th>
+                    <th>CNPJ</th>
+                    <th>Mês/Ano</th>
+                    <th>Horas Trabalhadas</th>
+                    <th>Valor por Hora</th>
+                    <th>Salário Bruto</th>
+                    <th>IR</th>
+                    <th>INSS</th>
+                    <th>FGTS</th>
+                    <th>Total de Descontos</th>
+                    <th>Valor Líquido</th>
+                </tr>
+                <tr>
+                    <td>@Model.NomeFuncionario</td>
+                    <td>@Model.Cpf</td>
+                    <td>@Model.Cargo</td>
+                    <td>@Model.Cnpj</td>
+                    <td>@Model.DataReferencia</td>
+                    <td>@Model.HorasTrabalhadas</td>
+                    <td>@Model.ValorHora</td>
+                    <td>@Model.SalarioBruto</td>
+                    <td>@Model.IR</td>
+                    <td>@Model.INSS</td>
+                    <td>@Model.FGTS</td>
+                    <td>@Model.Descontos</td>
+                    <td>@Model.SalarioLiquido</td>
+                </tr>
+            </table>
+
+    </div>
+</section>
+
+

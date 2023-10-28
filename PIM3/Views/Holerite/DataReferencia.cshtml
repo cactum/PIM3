@@ -1,0 +1,43 @@
+﻿@model ConsultaHoleriteModel // O modelo é uma lista de holerites
+
+@{
+    ViewData["Title"] = "Consultar Holerite";
+}
+
+<div class="main-container text-center d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="main-container">
+        <div class="welcome-container">
+            <div class="welcome-message">Consultar Holerites:</div>
+
+            <table class="table">
+                <tr>
+                    <input type="hidden" asp-for="Funcionario.Id" />
+
+                    <th scope ="col">Nome:</th>
+                    <th scope="col">Cargo:</th>
+                    <th scope="col">Data de pagamento:</th>
+                    <th scope="col">Data Referência:</th>
+                    <th scope="col"> </th>
+                </tr>
+                @foreach (HoleriteModel holerite in Model.Holerites)
+                {
+                    <tr>
+                        <td>@holerite.NomeFuncionario</td>
+                        <td>@holerite.Cargo</td>
+                        <td>@holerite.DataPagamento</td>
+                        <td>@holerite.DataReferencia.ToString("MM/yyyy")</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@holerite.FuncionarioId" asp-controller="Holerite" asp-action="Consultar" method="post">Consultar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <!-- O botão de consulta pode estar fora da tabela -->
+                <a class="btn btn-secondary" asp-controller="Holerite" asp-action="Index" role="button">Voltar</a>
+           
+        </div>
+    </div>
+</div>

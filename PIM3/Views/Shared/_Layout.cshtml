@@ -20,24 +20,7 @@
     <!-- Menu lateral -->
     <div class="menu-container" id="menuContainer">
         <!-- Opções do menu -->
-        <div class="options-menu">
-
-            <a class="option-button" role="button" asp-controller="Home" asp-action="Index">Inicio</a>
-            <br />
-            <a href="../HTML/meusdados.html" class="option-button">Meu Perfil</a>
-            <br />
-            <a class="option-button" role="button" asp-controller="Holerite" asp-action="Index">Consultar Holerite</a>
-            <br />
-            <a href="../HTML/consultarfolha.html" class="option-button">Consultar Folha de Ponto</a>
-            <br />
-            <a href="../HTML/relatorios.html" class="option-button">Consultar Relatórios</a>
-            <br />
-            <a href="../HTML/alterar.html" class="option-button">Solicitar Alteração de Dados Cadastrados</a>
-            <br />
-            <a class="option-button" role="button" asp-controller="Gerenciar" asp-action="Index">Gerenciar</a>
-            <br />
-            <a class="option-deslogar" role="button" asp-controller="Login" asp-action="Sair">Deslogar</a>
-        </div>
+        @await Component.InvokeAsync("Menu");
     </div>
 
     <!-- Scripts JavaScript e outras inclusões -->

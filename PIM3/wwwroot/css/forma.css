@@ -185,3 +185,17 @@ body {
     width: 100%;
     margin: 0 auto; /* Centraliza horizontalmente */
 }
+
+.user-identification {
+    font-size: 14px;
+    color: #fff; /* Mesma cor que os bot?es */
+    background: rgba(0, 0, 0, 0.8); /* Cor de fundo semelhante ? dos bot?es */
+    padding: 10px; /* Espa?amento interno */
+    border-radius: 5px; /* Borda arredondada */
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    cursor: pointer; /* Altera o cursor para parecer um bot?o clic?vel */
+    width: 200px;
+}
+
+

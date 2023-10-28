@@ -1,45 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Consultar Holerite";
+﻿@model List<FuncionarioModel>
+@{
+    ViewData["Title"] = "Seleção de Funcionários";
 }
 
-<div class="main-container text-center d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <div class="main-container">
-        <div class="welcome-container">
-            <!-- Mensagem de boas-vindas -->
-            <div class="welcome-message"> Consultar Holerite:</div>
-            <!-- Contêiner de informações da empresa -->
-            <div class="company-info-container">
-                <div class="company-info">
-                    <!-- Adicionar a função de consultar holerite aqui -->
-                    <label for="month">Selecione o mês:</label>
-                    <select id="month">
-                        <option value="01">Janeiro</option>
-                        <option value="02">Fevereiro</option>
-                        <option value="03">Março</option>
-                        <option value="04">Abril</option>
-                        <option value="05">Maio</option>
-                        <option value="06">Junho</option>
-                        <option value="07">Julho</option>
-                        <option value="08">Agosto</option>
-                        <option value="09">Setembro</option>
-                        <option value="10">Outubro</option>
-                        <option value="11">Novembro</option>
-                        <option value="12">Dezembro</option>
+<section class="main-container">
+    <div class="welcome-container">
+        <h2 class="welcome-message">Selecoine o funcionário que deseja consultar:</h2>
 
-                       
-                    </select>
-                    <label for="year">Selecione o ano:</label>
-                    <select id="year">
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <!-- ... adicione os outros anos ... -->
-                    </select>
-                    <button onclick="consultarHolerite()">Consultar</button>
-                    <div id="result"></div>
-                </div>
-            </div>
+        <div class="content">
+            <table class="table" id="tabela-funcionarios">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Data de Nascimento</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (FuncionarioModel funcionario in Model)
+                        {
+                            <tr>
+                                <th scope="row">@funcionario.Id</th>
+                                <td>@funcionario.Nome</td>
+                                <td>@funcionario.CPF</td>
+                                <td>@funcionario.NascData</td>
+                                <td>@funcionario.Genero</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a role="button" class="btn btn-primary" asp-route-id="@funcionario.Id" asp-controller="Holerite" asp-action="DataReferencia">Selecionar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr class="odd"><td valign="top" colspan="5">Nenhum funcionário encontrado</td> </tr>
+                    }
+
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
+</section>

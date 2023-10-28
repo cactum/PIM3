@@ -6,6 +6,7 @@
 $(document).ready(function () {
     getDataTable('#tabela-funcionarios')
     getDataTable('#tabela-usuarios')
+   
 });
 
 function getDataTable(id){
