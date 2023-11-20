@@ -8,6 +8,7 @@ namespace PIM3.Repositorio
         List<FuncionarioModel> Buscar();
         List<HoleriteModel> ConsultarHolerites(int funcionarioId);
         FuncionarioModel ListarPorId(int id);
+        HoleriteModel BuscarPorId(int id);
      
 
 

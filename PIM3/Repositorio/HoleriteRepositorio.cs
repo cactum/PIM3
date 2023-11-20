@@ -56,6 +56,10 @@ namespace PIM3.Repositorio
             return holerites;
         }
 
+        public HoleriteModel BuscarPorId(int id)
+        {
+            return _bancoContext.Holerites.FirstOrDefault(x => x.Id == id);
+        }
 
 
 

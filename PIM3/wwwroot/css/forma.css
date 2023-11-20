@@ -47,9 +47,8 @@ body {
     width: 100%;
     text-align: center;
     margin: 0 auto;
-    margin-right:auto
-   
-}  
+    margin-right: auto
+}
 
 .welcome-message {
     font-size: 24px;
@@ -95,7 +94,8 @@ body {
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    font-size:13px;
+    margin-bottom: 3px;
     text-decoration: none;
     text-align: center;
     width: 200px;
@@ -170,7 +170,7 @@ body {
 
 .form-entrar {
     width: 250px; /* Largura reduzida das caixas de formulário */
-    font-size:15px;
+    font-size: 15px;
     background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo mais transparente */
     border: 1px solid #ccc; /* Adicionando uma borda leve */
     border-radius: 8px; /* Borda arredondada */
@@ -187,7 +187,7 @@ body {
 }
 
 .user-identification {
-    font-size: 14px;
+    font-size: 13px;
     color: #fff; /* Mesma cor que os bot?es */
     background: rgba(0, 0, 0, 0.8); /* Cor de fundo semelhante ? dos bot?es */
     padding: 10px; /* Espa?amento interno */
@@ -199,3 +199,116 @@ body {
 }
 
 
+body, html {
+    margin: 0;
+    width: auto;
+    font-family: arial, sans-serif;
+    color: #242424;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px dashed #918F8F;
+}
+
+thead tr th {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+thead tr td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+tbody tr td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tfoot tr td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.border-top {
+    border-top: 1px dashed #FFFFFF;
+}
+
+.border-bottom {
+    border-bottom: 1px dashed #FFFFFF;
+}
+
+.border-left {
+    border-left: 1px dashed #FFFFFF;
+}
+
+.border-right {
+    border-right: 1px dashed #FFFFFF;
+}
+
+.border-top, .border-bottom, .border-left, .border-right {
+    border-color: #918F8F;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-value {
+    text-align: right;
+}
+
+.row-width {
+    height: 30px;
+}
+
+.table-clean {
+    border: 0px;
+}
+
+.table-label-title {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.table-label-text {
+    text-align: center;
+    font-size: 13px;
+}
+
+.table-label-text-description {
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.padding-clean {
+    padding: 0px;
+}
+
+.display-block {
+    display: block;
+}
+
+.row-label-value {
+    font-size: 13px;
+}
+
+.row-description {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+@media print {
+    .pagebreak {
+        page-break-before: always;
+    }
+    /* page-break-after works, as well */
+}

@@ -31,10 +31,21 @@ namespace PIM3.Controllers
                 return RedirectToAction("Index");
             }
         }
-        public IActionResult ConsultarHolerite()
+        public IActionResult Consultar(int id)
         {
-            // Aqui você pode preencher os valores de Meses e Anos para as opções do select no modelo.
-            
+            try
+            {
+                HoleriteModel holerite = _holeriteRepositorio.BuscarPorId(id);
+                return View(holerite);
+            }
+            catch (Exception e)
+            {
+
+                TempData["MensagemErro"] = $"Algo saiu errado, não foi possivel localizar, tente novamente! \n" +
+                 $"detalhe do erro: {e.Message}";
+                return RedirectToAction("ListarTodos");
+            }
+
 
             return View();
         }
@@ -83,44 +94,6 @@ namespace PIM3.Controllers
 
             return View(model);
         }
-
-
-        public List<SelectListItem> GetMeses()
-        {
-            var meses = new List<SelectListItem>
-    {
-        new SelectListItem("Janeiro", "01"),
-        new SelectListItem("Fevereiro", "02"),
-        new SelectListItem("Março", "03"),
-        new SelectListItem("Abril","04"),
-        new SelectListItem("Maio","05"),
-        new SelectListItem("Junho","06"),
-        new SelectListItem("Julho","07"),
-        new SelectListItem("Agosto","08"),
-        new SelectListItem("Setembro","09"),
-        new SelectListItem("Outubro","10"),
-        new SelectListItem("Novembro","11"),
-        new SelectListItem("Dezembro","12"),
-    };
-
-            return meses;
-        }
-
-        public List<SelectListItem> GetAnos()
-        {
-            var anos = new List<SelectListItem>
-    {
-        new SelectListItem("2023", "2023"),
-        new SelectListItem("2022", "2022"),
-        new SelectListItem("2021", "2021"),
-        new SelectListItem("2020", "2020"),
-        new SelectListItem("2019", "2019"),
-
-    };
-
-            return anos;
-        }
-
 
     }
 }
